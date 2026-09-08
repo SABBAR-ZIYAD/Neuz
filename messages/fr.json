@@ -1,0 +1,281 @@
+{
+  "meta": {
+    "title": "NEUZ — Créations artistiques sur mesure à Marrakech",
+    "description": "Maison de création à Marrakech. Tapis sculptés, miroirs et œuvres murales sur mesure, à la rencontre de l’art contemporain et de l’artisanat marocain."
+  },
+  "nav": {
+    "maison": "La maison",
+    "creations": "Les créations",
+    "savoir": "Le savoir-faire",
+    "contact": "Contact",
+    "quote": "Demander un devis",
+    "menu": "Ouvrir le menu",
+    "close": "Fermer",
+    "language": "Langue",
+    "skip": "Aller au contenu"
+  },
+  "hero": {
+    "eyebrow": "Maison de création · Marrakech",
+    "line1": "L’art de donner",
+    "line2": "une âme",
+    "line3": "aux espaces.",
+    "text": "Des pièces singulières, façonnées pour votre lieu. À la rencontre de l’art, du design et de la matière.",
+    "explore": "Explorer nos créations",
+    "bottom": "Créateur d’émotions visuelles",
+    "scroll": "Défiler pour découvrir",
+    "caption": "Étude d’espace · Art mural"
+  },
+  "maison": {
+    "label": "01 — La maison",
+    "title": "Une sensibilité artistique.",
+    "italic": "Une empreinte singulière.",
+    "text": "NEUZ est une maison marocaine de création artistique et décorative, née à Marrakech. Nous imaginons des œuvres qui dialoguent avec l’architecture, la lumière et l’identité de chaque lieu.",
+    "text2": "Entre art contemporain, design et savoir-faire artisanal, chaque création est pensée comme une présence. Une matière, une ligne, une émotion que l’on n’oublie pas.",
+    "link": "Imaginons votre pièce",
+    "caption": "L’art, en dialogue avec l’espace",
+    "quote": "Nous ne cherchons pas simplement à décorer un lieu. Nous cherchons à lui donner une émotion visuelle."
+  },
+  "creations": {
+    "label": "02 — Les créations",
+    "title": "Des matières vivantes.",
+    "italic": "Des pièces de caractère.",
+    "intro": "Tapis, miroirs, œuvres murales… Des expressions libres, réunies par une même signature.",
+    "all": "Toute la sélection",
+    "rugs": "Tapis",
+    "mirrors": "Miroirs",
+    "wall": "Art mural",
+    "view": "Découvrir la pièce",
+    "note": "Une sélection de créations et de visualisations artistiques. Chaque projet est adapté à votre espace.",
+    "more": "Et au-delà : tables artistiques, sculptures, tableaux, poufs et coussins.",
+    "bespoke": "Une autre idée ? Parlons-en.",
+    "study": "Étude artistique",
+    "detail": "L’esprit de la pièce",
+    "custom": "Création sur mesure",
+    "customText": "Dimensions, palette et finitions se définissent ensemble, selon votre espace et vos envies.",
+    "inspired": "S’inspirer de cette pièce",
+    "prev": "Pièce précédente",
+    "next": "Pièce suivante"
+  },
+  "products": {
+    "arch": {
+      "name": "L’arche habitée",
+      "type": "Art mural · Composition textile",
+      "description": "Une composition d’arches aux tons terre et sable. Le relief textile accompagne les volumes et donne un point d’ancrage à l’espace.",
+      "alt": "Composition murale d’arches textiles dans un intérieur aux tons crème"
+    },
+    "wave": {
+      "name": "Contours libres",
+      "type": "Miroir · Ligne organique",
+      "description": "Une silhouette ondulante, soulignée de bleu profond et d’ocre. Un miroir pensé comme une œuvre à part entière, entre reflet et matière.",
+      "alt": "Miroir ondulant bleu marine, crème et ocre dans un intérieur chaleureux"
+    },
+    "rug": {
+      "name": "Fragments de terre",
+      "type": "Tapis · Relief sculpté",
+      "description": "Des formes abstraites se rencontrent dans une palette de terre, de crème et de bleu. Une composition textile où la texture dessine le mouvement.",
+      "alt": "Tapis abstrait crème, orange et bleu, présenté sur un cadre de travail"
+    },
+    "mirror": {
+      "name": "Écho d’architecture",
+      "type": "Miroir · Arche textile",
+      "description": "L’arche devient un objet sensible. Un encadrement texturé, des tons naturels et une présence qui répond aux lignes de l’architecture.",
+      "alt": "Miroir en arche avec encadrement textile dans un salon marocain minimaliste"
+    },
+    "color": {
+      "name": "Matière en mouvement",
+      "type": "Tapis · Composition chromatique",
+      "description": "Une exploration du volume et de la couleur. Roses, terres et contrastes composent un paysage textile expressif, à imaginer au sol ou au mur.",
+      "alt": "Tapis sculptural abstrait aux couleurs rose, orange et terre"
+    },
+    "babouche": {
+      "name": "Mémoire de formes",
+      "type": "Miroir · Inspiration marocaine",
+      "description": "Une forme familière de l’artisanat marocain, réinterprétée dans une silhouette contemporaine. Le bleu profond souligne un reflet tout en douceur.",
+      "alt": "Miroir pointu inspiré de la babouche, bordé de textile bleu marine"
+    }
+  },
+  "savoir": {
+    "label": "03 — Le savoir-faire",
+    "title": "La main façonne.",
+    "italic": "La matière raconte.",
+    "text": "Dessiner une ligne. Choisir une fibre. Donner du relief. Notre approche fait dialoguer le geste artisanal et une vision contemporaine de l’objet.",
+    "text2": "Textures sculptées, jeux de volumes, associations de couleurs : la matière n’est pas un détail. Elle est le point de départ.",
+    "tag1": "Sens de la matière",
+    "tag2": "Geste artisanal",
+    "tag3": "Liberté de création",
+    "detailAlt": "Détail des fibres et des reliefs sculptés d’un tapis rose et orange",
+    "workshopAlt": "Cadre de tufting, fils et outils dans l’atelier",
+    "caption": "Du premier fil à la dernière finition"
+  },
+  "process": {
+    "label": "04 — Le sur-mesure",
+    "title": "Votre idée.",
+    "italic": "Notre regard.",
+    "intro": "Une création juste commence par une conversation. Nous vous accompagnons de la première inspiration à la réalisation.",
+    "steps": [
+      {
+        "title": "La rencontre",
+        "text": "Votre lieu, vos envies, vos contraintes. Nous prenons le temps de comprendre ce qui rend votre projet singulier."
+      },
+      {
+        "title": "La direction artistique",
+        "text": "Une intention, une palette, des références. Ensemble, nous posons les bases de l’univers de votre pièce."
+      },
+      {
+        "title": "La conception",
+        "text": "Croquis, formes, matières et dimensions : l’idée se précise et la création prend forme."
+      },
+      {
+        "title": "La visualisation",
+        "text": "Quand le projet le nécessite, une visualisation 3D permet de se projeter dans l’espace."
+      },
+      {
+        "title": "La validation",
+        "text": "Nous confirmons ensemble les détails, les finitions, le budget et les conditions de réalisation."
+      },
+      {
+        "title": "La réalisation",
+        "text": "La pièce prend vie, avec une attention portée aux volumes, aux textures et à chaque finition."
+      }
+    ]
+  },
+  "professionals": {
+    "label": "05 — Les collaborations",
+    "title": "Vous imaginez l’espace.",
+    "italic": "Nous lui donnons une signature.",
+    "text": "Architectes, décorateurs, hôtels, riads, restaurants et marques : imaginons des pièces qui prolongent votre vision, du geste singulier à un ensemble cohérent.",
+    "cta": "Parlons de votre projet",
+    "caption": "Visualisation · Dialogue entre art et hospitalité",
+    "alt": "Salon marocain chaleureux avec une composition d’arches au mur"
+  },
+  "contact": {
+    "label": "06 — Votre projet",
+    "title": "Et si tout commençait",
+    "italic": "par une idée ?",
+    "text": "Une photo, un plan, un rendu 3D ou simplement une inspiration. Partagez votre point de départ, imaginons la suite ensemble.",
+    "cta": "Imaginons votre pièce",
+    "location": "Marrakech, Maroc",
+    "social": "Suivre notre univers",
+    "faqTitle": "Quelques réponses avant de commencer",
+    "faq": [
+      {
+        "q": "Quels types de créations imagine NEUZ ?",
+        "a": "Nous imaginons des tapis, miroirs, œuvres murales, tableaux, sculptures, tables artistiques, poufs et coussins. Chaque projet est conçu en dialogue avec votre espace."
+      },
+      {
+        "q": "Peut-on adapter une pièce à un projet professionnel ?",
+        "a": "Oui. Nous collaborons avec les architectes, décorateurs, hôtels, riads, restaurants et entreprises pour définir des créations adaptées à leur projet."
+      },
+      {
+        "q": "Comment demander un devis sur mesure ?",
+        "a": "Partagez votre type de projet, les créations souhaitées, les dimensions si vous les connaissez et votre budget indicatif. Vous pouvez ajouter des références. Nous reprenons contact par WhatsApp, email ou téléphone, selon votre préférence."
+      }
+    ]
+  },
+  "footer": {
+    "tag": "Créateur d’émotions visuelles",
+    "rights": "Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "back": "Retour en haut",
+    "credit": "Art · Design · Matière"
+  },
+  "privacy": {
+    "title": "Vos informations, avec soin.",
+    "text": "Les informations du formulaire sont transmises à NEUZ pour étudier votre demande et vous recontacter par le moyen choisi. L’envoi est assuré par Resend et la demande est reçue dans la messagerie Gmail de NEUZ. Vos références ne sont pas publiées sur le site. N’ajoutez pas de document confidentiel ou de données sensibles.",
+    "rights": "Pour toute question ou demande de suppression de vos informations, écrivez à neuzinteriordesign@gmail.com. Le site n’utilise pas de cookies publicitaires. Votre choix de langue peut être mémorisé par un cookie de préférence."
+  },
+  "form": {
+    "label": "Une création commence ici",
+    "title": "Parlons de votre projet.",
+    "description": "Quelques détails pour imaginer une pièce qui vous ressemble.",
+    "steps": ["Vous", "Votre projet", "Vos inspirations"],
+    "step": "Étape {current} sur {total}",
+    "next": "Continuer",
+    "back": "Retour",
+    "close": "Fermer le formulaire",
+    "required": "* Champs obligatoires",
+    "select": "Sélectionner",
+    "name": "Nom complet",
+    "email": "Adresse email",
+    "phone": "Téléphone / WhatsApp",
+    "profile": "Vous êtes",
+    "project": "Type de projet",
+    "creation": "Type de création",
+    "quantity": "Quantité",
+    "dimensions": "Dimensions souhaitées",
+    "dimensionHint": "Facultatif : laissez vide si les dimensions restent à définir.",
+    "width": "Largeur",
+    "height": "Hauteur / longueur",
+    "length": "Longueur",
+    "vertical": "Hauteur",
+    "unit": "Unité",
+    "budget": "Budget indicatif",
+    "brief": "Votre projet en quelques mots",
+    "briefPlaceholder": "Le lieu, l’ambiance, les matières, les couleurs… Qu’imaginez-vous ?",
+    "files": "Vos références",
+    "upload": "Ajouter des fichiers",
+    "fileHint": "Photos JPG/PNG/WebP ou PDF. 5 fichiers maximum, 3 Mo au total. Pour des fichiers 3D ou plus volumineux, indiquez un lien de partage dans votre brief.",
+    "remove": "Supprimer {name}",
+    "method": "Comment préférez-vous être contacté ?",
+    "consent": "J’accepte que NEUZ utilise ces informations pour étudier ma demande et me recontacter.",
+    "privacy": "Lire la notice de confidentialité",
+    "send": "Envoyer ma demande",
+    "sending": "Envoi en cours…",
+    "successTitle": "Votre idée est entre de bonnes mains.",
+    "successText": "Votre demande a été envoyée à NEUZ. Nous vous recontacterons par le moyen que vous avez choisi.",
+    "successRef": "Référence : {id}",
+    "done": "Revenir aux créations",
+    "error": "L’envoi n’a pas abouti. Vos informations sont conservées dans ce formulaire. Réessayez ou contactez-nous directement.",
+    "unavailable": "Le formulaire n’est pas encore connecté à notre messagerie. Contactez-nous par email ou WhatsApp ; vos informations restent dans ce formulaire.",
+    "rateLimit": "Plusieurs demandes ont été envoyées récemment. Patientez un moment ou contactez-nous directement.",
+    "invalid": "Vérifiez les champs obligatoires et les fichiers joints.",
+    "fileError": "Ajoutez uniquement des JPG, PNG, WebP ou PDF, sans dépasser 5 fichiers et 3 Mo au total.",
+    "contactDirect": "Nous contacter directement",
+    "inspiration": "Pièce d’inspiration : {name}",
+    "profiles": {
+      "designer": "Décorateur / Designer d’intérieur",
+      "architect": "Architecte",
+      "hotel": "Hôtel",
+      "riad": "Riad",
+      "restaurant": "Restaurant",
+      "company": "Entreprise",
+      "private": "Particulier",
+      "other": "Autre"
+    },
+    "projects": {
+      "residential": "Résidentiel",
+      "hospitality": "Hôtellerie",
+      "restaurant": "Restaurant",
+      "retail": "Commerce",
+      "office": "Bureau",
+      "other": "Autre"
+    },
+    "creations": {
+      "rug": "Tapis",
+      "mirror": "Miroir",
+      "table": "Table",
+      "sculpture": "Sculpture",
+      "painting": "Tableau",
+      "wall": "Œuvre murale",
+      "pouf": "Pouf",
+      "cushion": "Coussin",
+      "other": "Autre"
+    },
+    "budgets": {
+      "under5000": "Moins de 5 000 MAD",
+      "5000to15000": "5 000 à 15 000 MAD",
+      "15000to30000": "15 000 à 30 000 MAD",
+      "over30000": "Plus de 30 000 MAD",
+      "discuss": "À définir ensemble"
+    },
+    "methods": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "phone": "Téléphone"
+    }
+  },
+  "notFound": {
+    "title": "Cette page n’existe pas.",
+    "link": "Revenir à la maison"
+  }
+}

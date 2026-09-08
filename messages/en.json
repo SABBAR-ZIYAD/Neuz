@@ -1,0 +1,277 @@
+{
+  "meta": {
+    "title": "NEUZ — Bespoke art & design in Marrakech",
+    "description": "A creative house in Marrakech. Bespoke sculpted rugs, mirrors and wall artworks, bringing contemporary art and Moroccan craftsmanship into dialogue."
+  },
+  "nav": {
+    "maison": "The house",
+    "creations": "The creations",
+    "savoir": "The craft",
+    "contact": "Contact",
+    "quote": "Request a quote",
+    "menu": "Open menu",
+    "close": "Close",
+    "language": "Language",
+    "skip": "Skip to content"
+  },
+  "hero": {
+    "eyebrow": "A creative house · Marrakech",
+    "line1": "The art of giving",
+    "line2": "a soul",
+    "line3": "to spaces.",
+    "text": "Distinctive pieces, imagined for your space. Where art, design and material meet.",
+    "explore": "Explore our creations",
+    "bottom": "Creator of visual emotions",
+    "scroll": "Scroll to discover",
+    "caption": "Spatial study · Wall art"
+  },
+  "maison": {
+    "label": "01 — The house",
+    "title": "An artistic sensibility.",
+    "italic": "A distinctive imprint.",
+    "text": "NEUZ is a Moroccan house of artistic and decorative creation, born in Marrakech. We imagine works that converse with the architecture, light and identity of each place.",
+    "text2": "Between contemporary art, design and artisanal savoir-faire, each creation is conceived as a presence. A material, a line, an emotion that stays with you.",
+    "link": "Let’s imagine your piece",
+    "caption": "Art in conversation with space",
+    "quote": "We do not simply seek to decorate a place. We seek to give it a visual emotion."
+  },
+  "creations": {
+    "label": "02 — The creations",
+    "title": "Living materials.",
+    "italic": "Pieces with presence.",
+    "intro": "Rugs, mirrors, wall artworks… Free expressions, brought together by a shared signature.",
+    "all": "The full selection",
+    "rugs": "Rugs",
+    "mirrors": "Mirrors",
+    "wall": "Wall art",
+    "view": "Discover the piece",
+    "note": "A selection of creations and artistic visualisations. Each project is adapted to your space.",
+    "more": "And beyond: artistic tables, sculptures, paintings, poufs and cushions.",
+    "bespoke": "Something else in mind? Let’s talk.",
+    "study": "Artistic study",
+    "detail": "The spirit of the piece",
+    "custom": "Made for your space",
+    "customText": "Dimensions, palette and finishes are defined together, according to your space and your vision.",
+    "inspired": "Start with this inspiration",
+    "prev": "Previous piece",
+    "next": "Next piece"
+  },
+  "products": {
+    "arch": {
+      "name": "The inhabited arch",
+      "type": "Wall art · Textile composition",
+      "description": "A composition of arches in earth and sand tones. Textile relief follows the volumes of the room, creating a quiet focal point.",
+      "alt": "Textile wall art with sculptural arches in a cream-toned interior"
+    },
+    "wave": {
+      "name": "Free contours",
+      "type": "Mirror · Organic line",
+      "description": "An undulating silhouette, outlined in deep blue and ochre. A mirror conceived as an artwork in its own right, between reflection and material.",
+      "alt": "Organic wavy mirror in navy blue, cream and ochre in a warm interior"
+    },
+    "rug": {
+      "name": "Fragments of earth",
+      "type": "Rug · Sculpted relief",
+      "description": "Abstract shapes meet in a palette of earth, cream and blue. A textile composition where texture traces movement.",
+      "alt": "Abstract cream, orange and blue rug displayed on a working frame"
+    },
+    "mirror": {
+      "name": "An architectural echo",
+      "type": "Mirror · Textile arch",
+      "description": "The arch becomes a tactile object. A textured frame, natural tones and a presence that responds to the lines of the architecture.",
+      "alt": "Arched textile-framed mirror in a minimalist Moroccan living room"
+    },
+    "color": {
+      "name": "Material in motion",
+      "type": "Rug · Colour composition",
+      "description": "An exploration of volume and colour. Pinks, earth tones and contrasts compose an expressive textile landscape, imagined for a floor or a wall.",
+      "alt": "Abstract sculptural rug with pink, orange and earthy colours"
+    },
+    "babouche": {
+      "name": "A memory of shapes",
+      "type": "Mirror · Moroccan inspiration",
+      "description": "A familiar form from Moroccan craftsmanship, reinterpreted in a contemporary silhouette. Deep blue outlines a gentle reflection.",
+      "alt": "Pointed babouche-inspired mirror with a navy blue textile border"
+    }
+  },
+  "savoir": {
+    "label": "03 — The craft",
+    "title": "Shaped by hand.",
+    "italic": "Told by material.",
+    "text": "Draw a line. Choose a fibre. Shape a relief. Our approach brings the artisan’s gesture into conversation with a contemporary vision of the object.",
+    "text2": "Sculpted textures, interplay of volumes, unexpected colours: material is never an afterthought. It is where everything begins.",
+    "tag1": "A feel for material",
+    "tag2": "An artisan’s touch",
+    "tag3": "Creative freedom",
+    "detailAlt": "Close-up of sculpted textile fibres in a pink and orange rug",
+    "workshopAlt": "Tufting frame, yarn and tools in the workshop",
+    "caption": "From the first thread to the final touch"
+  },
+  "process": {
+    "label": "04 — Bespoke",
+    "title": "Your idea.",
+    "italic": "Our perspective.",
+    "intro": "The right creation begins with a conversation. We accompany you from the first inspiration to the finished piece.",
+    "steps": [
+      {
+        "title": "The conversation",
+        "text": "Your space, your wishes, your constraints. We take the time to understand what makes your project distinct."
+      },
+      {
+        "title": "Artistic direction",
+        "text": "An intention, a palette, a set of references. Together, we establish the creative world of your piece."
+      },
+      {
+        "title": "The design",
+        "text": "Sketches, shapes, materials and dimensions: the idea becomes clearer and the creation takes form."
+      },
+      {
+        "title": "Visualisation",
+        "text": "When the project calls for it, a 3D visualisation helps you imagine the work within your space."
+      },
+      {
+        "title": "The approval",
+        "text": "We confirm the details, finishes, budget and production arrangements together."
+      },
+      {
+        "title": "The making",
+        "text": "The piece comes to life, with attention to its volumes, textures and every finishing touch."
+      }
+    ]
+  },
+  "professionals": {
+    "label": "05 — Collaborations",
+    "title": "You imagine the space.",
+    "italic": "We give it a signature.",
+    "text": "Architects, interior designers, hotels, riads, restaurants and brands: let’s imagine pieces that extend your vision, from a singular gesture to a cohesive whole.",
+    "cta": "Let’s discuss your project",
+    "caption": "Visualisation · Art meets hospitality",
+    "alt": "Warm Moroccan lounge with a composition of arches on the wall"
+  },
+  "contact": {
+    "label": "06 — Your project",
+    "title": "What if it all began",
+    "italic": "with an idea?",
+    "text": "A photo, a plan, a 3D render or simply an inspiration. Share your starting point, and let’s imagine what comes next.",
+    "cta": "Let’s imagine your piece",
+    "location": "Marrakech, Morocco",
+    "social": "Follow our world",
+    "faqTitle": "A few answers before we begin",
+    "faq": [
+      {
+        "q": "What does NEUZ create?",
+        "a": "We imagine rugs, mirrors, wall artworks, paintings, sculptures, artistic tables, poufs and cushions. Each project is designed in dialogue with your space."
+      },
+      {
+        "q": "Can a piece be adapted for a professional project?",
+        "a": "Yes. We collaborate with architects, interior designers, hotels, riads, restaurants and companies to develop creations suited to their project."
+      },
+      {
+        "q": "How can I request a bespoke quote?",
+        "a": "Share your project type, the creations you have in mind, dimensions if you know them and an indicative budget. You can attach references. We will follow up by WhatsApp, email or phone, according to your preference."
+      }
+    ]
+  },
+  "footer": {
+    "tag": "Creator of visual emotions",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "back": "Back to top",
+    "credit": "Art · Design · Material"
+  },
+  "privacy": {
+    "title": "Your information, handled with care.",
+    "text": "Your form details are sent to NEUZ to review your enquiry and contact you using your preferred method. Resend handles email delivery and the enquiry arrives in NEUZ’s Gmail mailbox. Your references are not published on the website. Please do not upload confidential documents or sensitive personal information.",
+    "rights": "For questions or to request deletion of your information, email neuzinteriordesign@gmail.com. This site does not use advertising cookies. A preference cookie may remember your language choice."
+  },
+  "form": {
+    "label": "A creation starts here",
+    "title": "Let’s talk about your project.",
+    "description": "A few details to imagine a piece that feels like you.",
+    "steps": ["About you", "Your project", "Your inspirations"],
+    "step": "Step {current} of {total}",
+    "next": "Continue",
+    "back": "Back",
+    "close": "Close form",
+    "required": "* Required fields",
+    "select": "Select",
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Phone / WhatsApp",
+    "profile": "Client profile",
+    "project": "Project type",
+    "creation": "Type of creation",
+    "quantity": "Quantity",
+    "dimensions": "Preferred dimensions",
+    "dimensionHint": "Optional: leave blank if dimensions are still to be defined.",
+    "width": "Width",
+    "height": "Height / length",
+    "length": "Length",
+    "vertical": "Height",
+    "unit": "Unit",
+    "budget": "Indicative budget",
+    "brief": "Tell us about your project",
+    "briefPlaceholder": "The space, the atmosphere, materials, colours… What do you have in mind?",
+    "files": "Your references",
+    "upload": "Add files",
+    "fileHint": "JPG/PNG/WebP photos or PDF. Up to 5 files, 3 MB combined. For 3D files or larger references, include a sharing link in your brief.",
+    "remove": "Remove {name}",
+    "method": "How would you like us to contact you?",
+    "consent": "I agree that NEUZ may use these details to review my enquiry and contact me.",
+    "privacy": "Read the privacy notice",
+    "send": "Send my request",
+    "sending": "Sending…",
+    "successTitle": "Your idea is in good hands.",
+    "successText": "Your request has been sent to NEUZ. We will get in touch using your preferred contact method.",
+    "successRef": "Reference: {id}",
+    "done": "Back to the creations",
+    "error": "Your request could not be sent. Your details are still in this form. Please try again or contact us directly.",
+    "unavailable": "The form is not connected to our mailbox yet. Please contact us by email or WhatsApp; your details remain in this form.",
+    "rateLimit": "Several requests have been sent recently. Please wait a while or contact us directly.",
+    "invalid": "Please check the required fields and attachments.",
+    "fileError": "Please add only JPG, PNG, WebP or PDF files, up to 5 files and 3 MB in total.",
+    "contactDirect": "Contact us directly",
+    "inspiration": "Inspired by: {name}",
+    "profiles": {
+      "designer": "Interior designer",
+      "architect": "Architect",
+      "hotel": "Hotel",
+      "riad": "Riad",
+      "restaurant": "Restaurant",
+      "company": "Company",
+      "private": "Private client",
+      "other": "Other"
+    },
+    "projects": {
+      "residential": "Residential",
+      "hospitality": "Hospitality",
+      "restaurant": "Restaurant",
+      "retail": "Retail",
+      "office": "Office",
+      "other": "Other"
+    },
+    "creations": {
+      "rug": "Rug",
+      "mirror": "Mirror",
+      "table": "Table",
+      "sculpture": "Sculpture",
+      "painting": "Painting",
+      "wall": "Wall artwork",
+      "pouf": "Pouf",
+      "cushion": "Cushion",
+      "other": "Other"
+    },
+    "budgets": {
+      "under5000": "Under MAD 5,000",
+      "5000to15000": "MAD 5,000–15,000",
+      "15000to30000": "MAD 15,000–30,000",
+      "over30000": "Over MAD 30,000",
+      "discuss": "Let’s define it together"
+    },
+    "methods": { "whatsapp": "WhatsApp", "email": "Email", "phone": "Phone" }
+  },
+  "notFound": {
+    "title": "This page could not be found.",
+    "link": "Return to the house"
+  }
+}
