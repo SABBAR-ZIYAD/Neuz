@@ -1,3 +1,4 @@
+import { imageSource } from "@/lib/catalog-model";
 import type { CSSProperties } from "react";
 export function ArtImage({
   name,
@@ -17,9 +18,9 @@ export function ArtImage({
   return (
     <img
       className={`art-image ${className}`}
-      src={`/images/${name}-800.webp`}
+      src={imageSource(name)}
       srcSet={[480, 800, 1440]
-        .map((w) => `/images/${name}-${w}.webp ${w}w`)
+        .map((w) => `${imageSource(name, w)} ${w}w`)
         .join(", ")}
       sizes={sizes}
       alt={alt}

@@ -4,5 +4,7 @@ export const routing = defineRouting({
   defaultLocale: "fr",
   localePrefix: "always",
   localeDetection: false,
+  // HTML metadata and the sitemap own canonical language alternatives.
+  alternateLinks: false,
 });
 export type Locale = (typeof routing.locales)[number];

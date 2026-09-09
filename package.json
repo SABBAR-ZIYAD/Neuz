@@ -2,7 +2,7 @@
   "name": "neuz-maison",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "bun@1.3.11",
+  "packageManager": "bun@1.4.2",
   "scripts": {
     "dev": "bun --bun next dev --hostname 127.0.0.1",
     "build": "bun --bun next build",
@@ -11,19 +11,26 @@
     "typecheck": "bun --bun tsc --noEmit",
     "test": "bun test ./tests",
     "test:browser": "bun scripts/interaction-check.mjs && bun scripts/visual-check.mjs",
-    "assets": "bun scripts/prepare-assets.mjs"
+    "assets": "bun scripts/prepare-assets.mjs",
+    "test:seo": "bun scripts/seo-check.mjs",
+    "admin:setup": "bun scripts/admin-setup.ts",
+    "admin:migrate": "bun scripts/admin-migrate.ts",
+    "test:admin": "bun scripts/admin-check.mjs",
+    "admin:seed": "bun scripts/admin-seed.ts"
   },
   "dependencies": {
     "@fontsource-variable/cormorant-garamond": "^5.2.8",
     "@fontsource-variable/manrope": "^5.2.8",
     "@fontsource-variable/noto-sans-arabic": "^5.2.8",
     "@radix-ui/react-dialog": "^1.1.15",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.116.0",
     "lucide-react": "^0.577.0",
     "next": "16.3.4",
     "next-intl": "^4.8.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "resend": "^6.9.0",
+    "resend": "^6.26.0",
     "sharp": "^0.35.4",
     "zod": "^4.3.6"
   },

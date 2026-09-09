@@ -16,7 +16,7 @@ export const products = [
     creation: "mirror",
   },
 ] as const;
-export type Product = (typeof products)[number];
+export type { CatalogProduct as Product } from "./catalog-model";
 export const contact = {
   email: "neuzinteriordesign@gmail.com",
   phone: "+212700388324",

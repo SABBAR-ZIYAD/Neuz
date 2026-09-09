@@ -1,8 +1,8 @@
 "use client";
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import * as Dialog from "@radix-ui/react-dialog";
-import Script from "next/script";
+import { BotCheck } from "./bot-check";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -23,17 +23,9 @@ import {
   MAX_FILES,
   MAX_FILE_BYTES,
 } from "@/lib/quote";
+import { localized } from "@/lib/catalog-model";
 import { contact, type Product } from "@/lib/catalog";
 
-declare global {
-  interface Window {
-    turnstile?: {
-      render: (el: HTMLElement, options: Record<string, unknown>) => string;
-      remove: (id: string) => void;
-      reset: (id: string) => void;
-    };
-  }
-}
 const initial = {
   name: "",
   email: "",
@@ -52,43 +44,6 @@ const initial = {
   website: "",
 };
 type Draft = typeof initial;
-function BotCheck({
-  onToken,
-  reset,
-}: {
-  onToken: (token: string) => void;
-  reset: number;
-}) {
-  const host = useRef<HTMLDivElement>(null);
-  const widget = useRef<string | undefined>(undefined);
-  const [loaded, setLoaded] = useState(false);
-  useEffect(() => {
-    if (!loaded || !host.current || !window.turnstile) return;
-    widget.current = window.turnstile.render(host.current, {
-      sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
-      callback: onToken,
-      "expired-callback": () => onToken(""),
-      "error-callback": () => onToken(""),
-      theme: "light",
-    });
-    return () => {
-      if (widget.current) window.turnstile?.remove(widget.current);
-    };
-  }, [loaded, onToken]);
-  useEffect(() => {
-    if (widget.current) window.turnstile?.reset(widget.current);
-  }, [reset]);
-  if (!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY) return null;
-  return (
-    <>
-      <Script
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-        onReady={() => setLoaded(true)}
-      />
-      <div ref={host} className="bot-check" />
-    </>
-  );
-}
 export function QuoteForm({
   open,
   onOpenChange,
@@ -173,7 +128,7 @@ export function QuoteForm({
         requestId: requestId.current,
         turnstile: token,
         inspiration: inspiration
-          ? all(`products.${inspiration.id}.name`)
+          ? localized(inspiration, locale).name
           : undefined,
       }),
     );
@@ -189,11 +144,13 @@ export function QuoteForm({
         setError(
           result.code === "UNAVAILABLE"
             ? "unavailable"
-            : result.code === "RATE_LIMIT"
-              ? "rateLimit"
-              : result.code === "INVALID"
-                ? "invalid"
-                : "error",
+            : result.code === "QUOTA_LIMIT"
+              ? "quotaLimit"
+              : result.code === "RATE_LIMIT"
+                ? "rateLimit"
+                : result.code === "INVALID"
+                  ? "invalid"
+                  : "error",
         );
         setBotReset((v) => v + 1);
         setToken("");
@@ -369,7 +326,7 @@ export function QuoteForm({
                   {inspiration && (
                     <p className="inspiration-note">
                       {t("inspiration", {
-                        name: all(`products.${inspiration.id}.name`),
+                        name: localized(inspiration, locale).name,
                       })}
                     </p>
                   )}
@@ -604,11 +561,21 @@ export function QuoteForm({
                           {notice && (
                             <div className="inline-privacy">
                               <p>{all("privacy.text")}</p>
-                              <p>{all("privacy.rights")}</p>
+                              <p>
+                                {all("privacy.rights", {
+                                  email: contact.email,
+                                })}
+                              </p>
                             </div>
                           )}
                         </div>
-                        <BotCheck onToken={setToken} reset={botReset} />
+                        <BotCheck
+                          onToken={setToken}
+                          reset={botReset}
+                          action="quote"
+                          errorText={t("botError")}
+                          retryText={t("botRetry")}
+                        />
                       </div>
                     )}
                     {error && (

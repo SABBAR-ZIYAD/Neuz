@@ -1,14 +1,5 @@
-import type { MetadataRoute } from "next";
-import { siteUrl } from "@/lib/seo";
-export default function sitemap(): MetadataRoute.Sitemap {
-  return ["fr", "en", "ar"].map((locale) => ({
-    url: `${siteUrl}/${locale}`,
-    alternates: {
-      languages: {
-        fr: `${siteUrl}/fr`,
-        en: `${siteUrl}/en`,
-        ar: `${siteUrl}/ar`,
-      },
-    },
-  }));
+import { getPublicCatalog } from "@/lib/catalog-data";
+import { buildCatalogSitemap } from "@/lib/catalog-sitemap";
+export default async function sitemap() {
+  return buildCatalogSitemap((await getPublicCatalog()).categories);
 }

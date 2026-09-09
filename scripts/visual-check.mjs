@@ -1,4 +1,4 @@
-import { chromium } from "@playwright/test";
+import { chromium, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { mkdir, writeFile } from "node:fs/promises";
 const browser = await chromium.launch({ channel: "chrome", headless: true });
@@ -132,6 +132,22 @@ try {
       .getByLabel("Votre projet en quelques mots")
       .inputValue(),
   });
+  await page.unroute("**/api/quote");
+  await page.route("**/api/quote", (route) =>
+    route.fulfill({
+      status: 429,
+      contentType: "application/json",
+      body: JSON.stringify({ code: "QUOTA_LIMIT", retryAfter: 86400 }),
+    }),
+  );
+  await page
+    .getByRole("button", { name: "Envoyer ma demande", exact: true })
+    .click();
+  await expect(page.getByRole("alert")).toContainText("limite d’envoi");
+  await expect(
+    page.getByRole("alert").getByRole("link", { name: "WhatsApp" }),
+  ).toBeVisible();
+  results.push({ quotaLimitFallback: true });
   await page.unroute("**/api/quote");
   await page.route("**/api/quote", (route) =>
     route.fulfill({

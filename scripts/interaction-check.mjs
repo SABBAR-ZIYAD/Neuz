@@ -16,7 +16,7 @@ try {
     await expect(page.locator("html")).toHaveAttribute("lang", locale);
     await expect(page.locator("link[rel=canonical]")).toHaveAttribute(
       "href",
-      `http://localhost:3000/${locale}`,
+      `${process.env.SITE_URL || "http://localhost:3000"}/${locale}`,
     );
     await expect(page.locator("link[rel=alternate][hreflang]")).toHaveCount(4);
     await expect(page.locator("h1")).toHaveCount(1);

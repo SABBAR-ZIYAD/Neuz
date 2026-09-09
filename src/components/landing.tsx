@@ -14,9 +14,10 @@ import {
   Menu,
   Instagram,
 } from "lucide-react";
+import { localized, type PublicCatalog } from "@/lib/catalog-model";
 import { ArtImage } from "./art-image";
 import { QuoteForm } from "./quote-form";
-import { products, contact, type Product } from "@/lib/catalog";
+import { contact, type Product } from "@/lib/catalog";
 
 const navLinks = [
   ["maison", "maison"],
@@ -34,12 +35,12 @@ function Arrow() {
     />
   );
 }
-export function Landing() {
+export function Landing({ catalog }: { catalog: PublicCatalog }) {
+  const { products, categories } = catalog;
   const t = useTranslations();
   const locale = useLocale();
   const [menu, setMenu] = useState(false);
   const [quote, setQuote] = useState(false);
-  const [privacy, setPrivacy] = useState(false);
   const [filter, setFilter] = useState("all");
   const [selected, setSelected] = useState<Product | null>(null);
   const [inspiration, setInspiration] = useState<Product | undefined>();
@@ -260,18 +261,35 @@ export function Landing() {
             </div>
             <p>{t("creations.intro")}</p>
           </div>
+          <nav className="service-links" aria-label={t("services.navigation")}>
+            {categories.map((service) => (
+              <a
+                key={service.slug}
+                href={`/${locale}/creations/${service.slug}`}
+              >
+                {localized(service, locale).title ||
+                  localized(service, locale).name}{" "}
+                <Arrow />
+              </a>
+            ))}
+          </nav>
           <div className="filters" role="group" aria-label={t("nav.creations")}>
-            {["all", "rugs", "mirrors", "wall"].map((f) => (
+            {["all", ...categories.map((category) => category.id)].map((f) => (
               <button
                 key={f}
                 aria-pressed={filter === f}
                 className={filter === f ? "active" : ""}
                 onClick={() => setFilter(f)}
               >
-                {t(`creations.${f}`)}
+                {f === "all"
+                  ? t("creations.all")
+                  : localized(
+                      categories.find((category) => category.id === f)!,
+                      locale,
+                    ).name}
                 <span>
                   {f === "all"
-                    ? "06"
+                    ? String(products.length).padStart(2, "0")
                     : String(
                         products.filter((p) => p.category === f).length,
                       ).padStart(2, "0")}
@@ -290,12 +308,14 @@ export function Landing() {
                     galleryTrigger.current = event.currentTarget;
                     setSelected(p);
                   }}
-                  aria-label={`${t(`products.${p.id}.name`)} — ${t("creations.view")}`}
+                  aria-label={`${localized(p, locale).name} — ${t("creations.view")}`}
                 >
                   <div className="card-image">
                     <ArtImage
                       name={p.image}
-                      alt={t(`products.${p.id}.alt`)}
+                      alt={
+                        localized(p, locale).alt || localized(p, locale).name
+                      }
                       sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
                     />
                     <span className="card-number">
@@ -308,8 +328,8 @@ export function Landing() {
                   </div>
                   <div className="card-caption">
                     <div>
-                      <h3>{t(`products.${p.id}.name`)}</h3>
-                      <p>{t(`products.${p.id}.type`)}</p>
+                      <h3>{localized(p, locale).name}</h3>
+                      <p>{localized(p, locale).type}</p>
                     </div>
                     <Arrow />
                   </div>
@@ -354,14 +374,6 @@ export function Landing() {
               name="textile-detail"
               alt={t("savoir.detailAlt")}
             />
-            <figure className="atelier-image">
-              <ArtImage
-                name="atelier-tufting"
-                alt={t("savoir.workshopAlt")}
-                sizes="(max-width: 700px) 45vw, 22vw"
-              />
-              <figcaption>{t("savoir.caption")}</figcaption>
-            </figure>
           </div>
         </section>
 
@@ -502,9 +514,7 @@ export function Landing() {
           <span>
             © {new Date().getFullYear()} NEUZ. {t("footer.rights")}
           </span>
-          <button onClick={() => setPrivacy(true)}>
-            {t("footer.privacy")}
-          </button>
+          <a href={`/${locale}/privacy`}>{t("footer.privacy")}</a>
           <span>{t("footer.credit")}</span>
           <a href="#top">
             {t("footer.back")}
@@ -540,7 +550,10 @@ export function Landing() {
                 <div className="piece-image">
                   <ArtImage
                     name={selected.image}
-                    alt={t(`products.${selected.id}.alt`)}
+                    alt={
+                      localized(selected, locale).alt ||
+                      localized(selected, locale).name
+                    }
                     eager
                   />
                   <div className="piece-controls">
@@ -560,7 +573,7 @@ export function Landing() {
                     </button>
                     <span>
                       {String(products.indexOf(selected) + 1).padStart(2, "0")}{" "}
-                      / 06
+                      / {String(products.length).padStart(2, "0")}
                     </span>
                     <button
                       className="icon-button"
@@ -580,13 +593,13 @@ export function Landing() {
                 <div className="piece-copy">
                   <p className="eyebrow">{t("creations.study")}</p>
                   <Dialog.Title>
-                    {t(`products.${selected.id}.name`)}
+                    {localized(selected, locale).name}
                   </Dialog.Title>
                   <p className="piece-type">
-                    {t(`products.${selected.id}.type`)}
+                    {localized(selected, locale).type}
                   </p>
                   <Dialog.Description id="piece-description">
-                    {t(`products.${selected.id}.description`)}
+                    {localized(selected, locale).description}
                   </Dialog.Description>
                   <div className="piece-custom">
                     <h3>{t("creations.custom")}</h3>
@@ -616,25 +629,6 @@ export function Landing() {
             document.querySelector<HTMLButtonElement>(".header-quote")?.focus();
         }}
       />
-      <Dialog.Root open={privacy} onOpenChange={setPrivacy}>
-        <Dialog.Portal>
-          <Dialog.Overlay className="dialog-overlay" />
-          <Dialog.Content className="privacy-dialog">
-            <Dialog.Close
-              className="icon-button dialog-close"
-              aria-label={t("nav.close")}
-            >
-              <X />
-            </Dialog.Close>
-            <Dialog.Title>{t("privacy.title")}</Dialog.Title>
-            <Dialog.Description>{t("privacy.text")}</Dialog.Description>
-            <p>{t("privacy.rights")}</p>
-            <a href={`mailto:${contact.email}`} dir="ltr">
-              {contact.email}
-            </a>
-          </Dialog.Content>
-        </Dialog.Portal>
-      </Dialog.Root>
     </>
   );
 }

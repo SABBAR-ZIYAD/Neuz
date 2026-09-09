@@ -19,7 +19,7 @@
     "line1": "The art of giving",
     "line2": "a soul",
     "line3": "to spaces.",
-    "text": "Distinctive pieces, imagined for your space. Where art, design and material meet.",
+    "text": "Bespoke rugs, mirrors and wall art, imagined in Marrakech for your space. Where art, design and material meet.",
     "explore": "Explore our creations",
     "bottom": "Creator of visual emotions",
     "scroll": "Scroll to discover",
@@ -182,13 +182,17 @@
   "privacy": {
     "title": "Your information, handled with care.",
     "text": "Your form details are sent to NEUZ to review your enquiry and contact you using your preferred method. Resend handles email delivery and the enquiry arrives in NEUZ’s Gmail mailbox. Your references are not published on the website. Please do not upload confidential documents or sensitive personal information.",
-    "rights": "For questions or to request deletion of your information, email neuzinteriordesign@gmail.com. This site does not use advertising cookies. A preference cookie may remember your language choice."
+    "rights": "For questions or to request deletion of your information, email {email}. This site does not use advertising cookies. A preference cookie may remember your language choice."
   },
   "form": {
     "label": "A creation starts here",
     "title": "Let’s talk about your project.",
     "description": "A few details to imagine a piece that feels like you.",
-    "steps": ["About you", "Your project", "Your inspirations"],
+    "steps": [
+      "About you",
+      "Your project",
+      "Your inspirations"
+    ],
     "step": "Step {current} of {total}",
     "next": "Continue",
     "back": "Back",
@@ -268,10 +272,51 @@
       "over30000": "Over MAD 30,000",
       "discuss": "Let’s define it together"
     },
-    "methods": { "whatsapp": "WhatsApp", "email": "Email", "phone": "Phone" }
+    "methods": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "quotaLimit": "The form has temporarily reached its sending limit. Your request has not been sent. Please contact us directly by email or WhatsApp.",
+    "botError": "Security verification failed. Please try again or contact us directly.",
+    "botRetry": "Try again"
   },
   "notFound": {
     "title": "This page could not be found.",
     "link": "Return to the house"
+  },
+  "services": {
+    "navigation": "Explore our bespoke creations",
+    "home": "The house",
+    "examples": "Designs and visual studies",
+    "planning": "Planning your bespoke piece",
+    "related": "Explore other creations",
+    "contact": "Discuss your project",
+    "privacyDescription": "How NEUZ uses your enquiry details and how to contact us about your personal information.",
+    "planningText": "Share a photograph or plan of your space, the dimensions you have in mind, your preferred colours and an indicative budget. If you are still exploring, tell us what you know: the brief can take shape through discussion. The quote defines the details and conditions of the project before production.",
+    "rugs": {
+      "title": "Bespoke rugs in Marrakech",
+      "description": "Explore NEUZ’s bespoke rug designs in Marrakech: sculptural textiles, colour compositions and a creative process shaped around your interior.",
+      "intro": "NEUZ is a creative house in Marrakech designing bespoke rugs as part of an artistic interior. The rug becomes a composition of colour, texture and relief, developed in conversation with your space.",
+      "detail": "Our textile studies explore abstract shapes, contrasting colours and sculpted volumes. A reference can begin with the room itself, a palette or a visual idea. Dimensions, fibres, colours and finishes are discussed during design and confirmed for each project.",
+      "question": "What should I consider for a bespoke rug?",
+      "answer": "Tell us where the rug will sit, the available floor area and how the room is used. Bring photographs and any material or colour preferences. These details help define the proportions and textile direction; the final specifications are agreed as part of the quote."
+    },
+    "mirrors": {
+      "title": "Bespoke mirrors in Marrakech",
+      "description": "Discover NEUZ’s bespoke mirror designs in Marrakech, from arches and waves to babouche-inspired forms, imagined around your space.",
+      "intro": "NEUZ imagines bespoke mirrors in Marrakech as decorative pieces that bring shape and reflection into a room. Our studies explore arches, flowing lines and forms inspired by Moroccan visual culture.",
+      "detail": "The mirror can be the starting point for an interior composition or a response to existing architecture. The wave, arch and babouche studies offer different ways to frame a reflection. Their proportions, colours and surrounding materials are considered in relation to the project.",
+      "question": "What information helps define a bespoke mirror?",
+      "answer": "Share the wall dimensions, a photograph of the setting and the shape or atmosphere you prefer. Mention nearby furniture and lighting. Dimensions, finish and installation requirements should be discussed and confirmed for your particular space."
+    },
+    "wall": {
+      "title": "Bespoke wall art in Marrakech",
+      "description": "Explore bespoke wall art by NEUZ in Marrakech: textile relief, architectural compositions and artistic studies for homes and hospitality spaces.",
+      "intro": "NEUZ creates artistic concepts for bespoke wall pieces in Marrakech. The work is imagined in relation to architecture, light and the character of a space, with textile relief and sculptural composition as points of exploration.",
+      "detail": "Our arch study brings earth and sand tones into a wall composition. It shows how relief can respond to the volumes of a room and create a focal point. These visual studies are references for discussion; each project is developed for its own setting.",
+      "question": "How do I prepare a wall art brief?",
+      "answer": "Share the wall measurements, photographs or plans, and the effect you want the piece to create. Tell us whether the project is residential, a hotel, a riad, a restaurant or another professional space. Materials, dimensions and installation conditions are defined for the individual project."
+    }
   }
 }

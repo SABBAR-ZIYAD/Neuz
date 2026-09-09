@@ -1,5 +1,17 @@
+import { trustedRequestOrigin } from "@/lib/request-origin";
+import { verifyTurnstile } from "@/lib/turnstile";
+import { CatalogError } from "@/lib/catalog-storage";
+import {
+  reserveQuoteEmail,
+  QuoteEmailQuotaExceeded,
+} from "@/lib/quote-email-quota";
 import { createHash } from "node:crypto";
 import { Resend } from "resend";
+import {
+  limitQuote,
+  quoteClient,
+  QuoteLimitExceeded,
+} from "@/lib/quote-rate-limit";
 import {
   quoteSchema,
   fileTypes,
@@ -11,13 +23,37 @@ import {
 import { quoteEmail } from "@/lib/email";
 import { contact } from "@/lib/catalog";
 export const runtime = "nodejs";
-const attempts = new Map<string, { count: number; until: number }>();
 const MAX_BODY = MAX_FILE_BYTES + 128 * 1024;
 function response(code: string, status: number) {
   return Response.json(
     { code },
     { status, headers: { "Cache-Control": "no-store" } },
   );
+}
+function limitError(error: unknown) {
+  if (error instanceof QuoteEmailQuotaExceeded)
+    return Response.json(
+      { code: "QUOTA_LIMIT", retryAfter: error.retryAfter },
+      {
+        status: 429,
+        headers: {
+          "Cache-Control": "no-store",
+          "Retry-After": String(error.retryAfter),
+        },
+      },
+    );
+  if (error instanceof QuoteLimitExceeded)
+    return Response.json(
+      { code: "RATE_LIMIT", retryAfter: error.retryAfter },
+      {
+        status: 429,
+        headers: {
+          "Cache-Control": "no-store",
+          "Retry-After": String(error.retryAfter),
+        },
+      },
+    );
+  return response("FAILED", 503);
 }
 async function boundedFormData(request: Request) {
   const reader = request.body?.getReader();
@@ -39,33 +75,17 @@ async function boundedFormData(request: Request) {
   }).formData();
 }
 export async function POST(request: Request) {
-  const origin = request.headers.get("origin");
-  const expected = process.env.SITE_URL
-    ? new URL(process.env.SITE_URL).origin
-    : new URL(request.url).origin;
-  if (!origin || origin !== expected) return response("FORBIDDEN", 403);
+  if (!trustedRequestOrigin(request)) return response("FORBIDDEN", 403);
   if (
     !request.headers.get("content-type")?.startsWith("multipart/form-data") ||
     Number(request.headers.get("content-length") || 0) > MAX_BODY
   )
     return response("INVALID", 400);
-  // Short-lived, hashed keys: no raw client identifiers or request data are logged.
-  const ip =
-    request.headers.get("x-vercel-forwarded-for")?.split(",")[0] ||
-    request.headers.get("x-forwarded-for")?.split(",")[0] ||
-    "local";
-  const key = createHash("sha256").update(ip).digest("hex");
-  const now = Date.now();
-  for (const [k, v] of attempts) if (v.until < now) attempts.delete(k);
-  const current = attempts.get(key) || {
-    count: 0,
-    until: now + 15 * 60 * 1000,
-  };
-  if (current.count >= 5) return response("RATE_LIMIT", 429);
-  if (attempts.size >= 10000 && !attempts.has(key))
-    return response("RATE_LIMIT", 429);
-  current.count++;
-  attempts.set(key, current);
+  try {
+    await limitQuote("ip", quoteClient(request));
+  } catch (error) {
+    return limitError(error);
+  }
   let form: FormData;
   try {
     form = await boundedFormData(request);
@@ -103,26 +123,15 @@ export async function POST(request: Request) {
       contentType: file.type,
     });
   }
-  if (process.env.TURNSTILE_SECRET_KEY) {
-    if (!data.turnstile) return response("INVALID", 400);
-    try {
-      const check = await fetch(
-        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-        {
-          method: "POST",
-          body: new URLSearchParams({
-            secret: process.env.TURNSTILE_SECRET_KEY,
-            response: data.turnstile,
-          }),
-          signal: AbortSignal.timeout(8000),
-        },
-      );
-      const result = await check.json();
-      if (!result.success || result.hostname !== new URL(expected).hostname)
-        return response("INVALID", 400);
-    } catch {
-      return response("FAILED", 502);
-    }
+  try {
+    await verifyTurnstile(request, data.turnstile, "quote");
+  } catch (error) {
+    return response(
+      error instanceof CatalogError && error.status === 400
+        ? "INVALID"
+        : "UNAVAILABLE",
+      error instanceof CatalogError ? error.status : 503,
+    );
   }
   if (
     !process.env.RESEND_API_KEY ||
@@ -130,6 +139,11 @@ export async function POST(request: Request) {
     /@(?:gmail|googlemail)\.com[>\s]*$/i.test(process.env.RESEND_FROM)
   )
     return response("UNAVAILABLE", 503);
+  try {
+    await limitQuote("email", data.email);
+  } catch (error) {
+    return limitError(error);
+  }
   const reference = `NZ-${data.requestId.replace(/-/g, "").slice(0, 10).toUpperCase()}`;
   const email = quoteEmail(
     data,
@@ -140,6 +154,12 @@ export async function POST(request: Request) {
     JSON.stringify({ ...data, turnstile: undefined }),
   );
   attachments.forEach((a) => fingerprint.update(a.content));
+  // Reserve before sending; keep the reservation even if delivery is uncertain.
+  try {
+    await reserveQuoteEmail();
+  } catch (error) {
+    return limitError(error);
+  }
   try {
     const { error } = await new Resend(process.env.RESEND_API_KEY).emails.send(
       {
@@ -153,6 +173,13 @@ export async function POST(request: Request) {
         idempotencyKey: `quote-${data.requestId}-${fingerprint.digest("hex").slice(0, 20)}`,
       },
     );
+    if (
+      error &&
+      ["daily_quota_exceeded", "monthly_quota_exceeded"].includes(error.name)
+    )
+      return response("QUOTA_LIMIT", 429);
+    if (error?.name === "rate_limit_exceeded")
+      return response("RATE_LIMIT", 429);
     if (error) return response("FAILED", 502);
     return Response.json(
       { reference },

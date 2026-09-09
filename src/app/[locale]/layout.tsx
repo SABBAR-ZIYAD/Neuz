@@ -7,7 +7,7 @@ import {
 } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { siteUrl, isPublicSite } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import "@fontsource-variable/cormorant-garamond";
 import "@fontsource-variable/cormorant-garamond/wght-italic.css";
 import "@fontsource-variable/manrope";
@@ -25,36 +25,7 @@ export async function generateMetadata({
   if (!hasLocale(routing.locales, locale)) notFound();
   const t = await getTranslations({ locale, namespace: "meta" });
   return {
-    metadataBase: new URL(siteUrl),
-    title: t("title"),
-    description: t("description"),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: { fr: "/fr", en: "/en", ar: "/ar", "x-default": "/fr" },
-    },
-    robots: { index: isPublicSite, follow: true },
-    openGraph: {
-      title: t("title"),
-      description: t("description"),
-      url: `/${locale}`,
-      siteName: "NEUZ",
-      type: "website",
-      locale: { fr: "fr_MA", en: "en_GB", ar: "ar_MA" }[locale],
-      images: [
-        {
-          url: "/images/og-neuz.jpg",
-          width: 1200,
-          height: 630,
-          alt: "NEUZ — Art, design & matière",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-      images: ["/images/og-neuz.jpg"],
-    },
+    ...pageMetadata(locale, t("title"), t("description")),
     icons: { icon: "/icon.svg" },
   };
 }

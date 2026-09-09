@@ -19,7 +19,7 @@
     "line1": "L’art de donner",
     "line2": "une âme",
     "line3": "aux espaces.",
-    "text": "Des pièces singulières, façonnées pour votre lieu. À la rencontre de l’art, du design et de la matière.",
+    "text": "Tapis, miroirs et œuvres murales sur mesure, imaginés à Marrakech pour votre espace. À la rencontre de l’art, du design et de la matière.",
     "explore": "Explorer nos créations",
     "bottom": "Créateur d’émotions visuelles",
     "scroll": "Défiler pour découvrir",
@@ -182,13 +182,17 @@
   "privacy": {
     "title": "Vos informations, avec soin.",
     "text": "Les informations du formulaire sont transmises à NEUZ pour étudier votre demande et vous recontacter par le moyen choisi. L’envoi est assuré par Resend et la demande est reçue dans la messagerie Gmail de NEUZ. Vos références ne sont pas publiées sur le site. N’ajoutez pas de document confidentiel ou de données sensibles.",
-    "rights": "Pour toute question ou demande de suppression de vos informations, écrivez à neuzinteriordesign@gmail.com. Le site n’utilise pas de cookies publicitaires. Votre choix de langue peut être mémorisé par un cookie de préférence."
+    "rights": "Pour toute question ou demande de suppression de vos informations, écrivez à {email}. Le site n’utilise pas de cookies publicitaires. Votre choix de langue peut être mémorisé par un cookie de préférence."
   },
   "form": {
     "label": "Une création commence ici",
     "title": "Parlons de votre projet.",
     "description": "Quelques détails pour imaginer une pièce qui vous ressemble.",
-    "steps": ["Vous", "Votre projet", "Vos inspirations"],
+    "steps": [
+      "Vous",
+      "Votre projet",
+      "Vos inspirations"
+    ],
     "step": "Étape {current} sur {total}",
     "next": "Continuer",
     "back": "Retour",
@@ -272,10 +276,47 @@
       "whatsapp": "WhatsApp",
       "email": "Email",
       "phone": "Téléphone"
-    }
+    },
+    "quotaLimit": "Le formulaire a atteint sa limite d’envoi temporaire. Votre demande n’a pas été envoyée. Contactez-nous directement par email ou WhatsApp.",
+    "botError": "La vérification de sécurité a échoué. Réessayez ou contactez-nous directement.",
+    "botRetry": "Réessayer"
   },
   "notFound": {
     "title": "Cette page n’existe pas.",
     "link": "Revenir à la maison"
+  },
+  "services": {
+    "navigation": "Explorer nos créations sur mesure",
+    "home": "La maison",
+    "examples": "Créations et études visuelles",
+    "planning": "Préparer votre création sur mesure",
+    "related": "Explorer d’autres créations",
+    "contact": "Parlons de votre projet",
+    "privacyDescription": "Comment NEUZ utilise les informations de votre demande et comment nous contacter au sujet de vos données personnelles.",
+    "planningText": "Partagez une photographie ou un plan de votre espace, les dimensions envisagées, vos couleurs préférées et un budget indicatif. Si votre idée est encore ouverte, transmettez ce que vous savez : le brief peut se préciser dans le dialogue. Le devis définit les détails et les conditions du projet avant la réalisation.",
+    "rugs": {
+      "title": "Tapis sur mesure à Marrakech",
+      "description": "Découvrez les tapis sur mesure de NEUZ à Marrakech : reliefs textiles, compositions colorées et démarche créative pensée pour votre intérieur.",
+      "intro": "NEUZ est une maison de création à Marrakech qui imagine des tapis sur mesure pour des intérieurs singuliers. Le tapis devient une composition de couleurs, de textures et de reliefs, pensée en dialogue avec votre espace.",
+      "detail": "Nos études textiles explorent les formes abstraites, les contrastes de couleurs et les volumes sculptés. Le point de départ peut être une pièce, une palette ou une idée visuelle. Dimensions, fibres, couleurs et finitions sont discutées pendant la conception puis confirmées pour chaque projet.",
+      "question": "Que prévoir pour un tapis sur mesure ?",
+      "answer": "Indiquez son emplacement, la surface disponible au sol et l’usage de la pièce. Ajoutez des photographies et vos préférences de matières ou de couleurs. Ces éléments aident à définir les proportions et la direction textile ; les caractéristiques finales sont convenues dans le devis."
+    },
+    "mirrors": {
+      "title": "Miroirs sur mesure à Marrakech",
+      "description": "Découvrez les miroirs sur mesure de NEUZ à Marrakech : arches, ondulations et formes inspirées de la babouche, imaginées pour votre espace.",
+      "intro": "NEUZ imagine des miroirs sur mesure à Marrakech comme des pièces décoratives qui apportent forme et reflet à un intérieur. Nos études explorent les arches, les lignes ondulantes et les références à la culture visuelle marocaine.",
+      "detail": "Le miroir peut donner le point de départ d’une composition ou répondre à une architecture existante. Les études vague, arche et babouche proposent différentes manières d’encadrer le reflet. Proportions, couleurs et matières environnantes sont envisagées en relation avec le projet.",
+      "question": "Quelles informations préparer pour un miroir sur mesure ?",
+      "answer": "Partagez les dimensions du mur, une photographie du lieu et la forme ou l’ambiance recherchée. Précisez le mobilier et l’éclairage à proximité. Dimensions, finitions et conditions de pose sont à discuter et à confirmer pour votre espace."
+    },
+    "wall": {
+      "title": "Œuvres murales sur mesure à Marrakech",
+      "description": "Explorez les œuvres murales sur mesure de NEUZ à Marrakech : relief textile et compositions artistiques pour les intérieurs privés et professionnels.",
+      "intro": "NEUZ développe à Marrakech des concepts artistiques pour des œuvres murales sur mesure. La pièce se pense en relation avec l’architecture, la lumière et l’identité du lieu, à travers le relief textile et la composition sculpturale.",
+      "detail": "Notre étude d’arches associe des tons terre et sable dans une composition murale. Elle explore la manière dont le relief accompagne les volumes et crée un point d’ancrage dans l’espace. Ces visualisations servent de références pour échanger ; chaque projet est développé pour son propre lieu.",
+      "question": "Comment préparer un brief pour une œuvre murale ?",
+      "answer": "Partagez les mesures du mur, des photographies ou des plans et l’effet recherché. Précisez s’il s’agit d’un logement, d’un hôtel, d’un riad, d’un restaurant ou d’un autre espace professionnel. Matières, dimensions et conditions de pose sont définies pour chaque projet."
+    }
   }
 }

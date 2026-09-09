@@ -1,45 +1,36 @@
-import { setRequestLocale } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 import { Landing } from "@/components/landing";
-import { contact } from "@/lib/catalog";
+import { getPublicCatalog } from "@/lib/catalog-data";
+import { localized } from "@/lib/catalog-model";
 import { siteUrl } from "@/lib/seo";
+import { organizationData, serializeJsonLd } from "@/lib/structured-data";
 export default async function Page({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
+  const t = await getTranslations({ locale });
+  const catalog = await getPublicCatalog();
   const data = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${siteUrl}/#organization`,
-    name: "NEUZ",
-    url: siteUrl,
-    logo: `${siteUrl}/images/neuz-logo.png`,
-    email: contact.email,
-    telephone: contact.phone,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Marrakech",
-      addressCountry: "MA",
-    },
-    sameAs: [contact.instagram],
-    knowsLanguage: ["fr", "en", "ar"],
+    ...organizationData(),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Créations artistiques sur mesure",
-      itemListElement: [
-        "Tapis",
-        "Miroirs",
-        "Œuvres murales",
-        "Tables artistiques",
-        "Sculptures",
-        "Tableaux",
-        "Poufs",
-        "Coussins",
-      ].map((name) => ({
+      name: t("services.navigation"),
+      itemListElement: catalog.categories.map((service) => ({
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name },
+        itemOffered: {
+          "@type": "Service",
+          name:
+            localized(service, locale).title || localized(service, locale).name,
+          url: siteUrl + "/" + locale + "/creations/" + service.slug,
+        },
       })),
     },
   };
@@ -47,11 +38,9 @@ export default async function Page({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(data).replace(/</g, "\\u003c"),
-        }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }}
       />
-      <Landing />
+      <Landing catalog={catalog} />
     </>
   );
 }
