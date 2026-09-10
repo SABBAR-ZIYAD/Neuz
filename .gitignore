@@ -7,3 +7,7 @@ tmp/
 playwright-report/
 
 data/
+
+# Local Netlify folder
+.netlify
+.agents/
