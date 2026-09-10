@@ -43,8 +43,20 @@ export async function verifyTurnstile(
         signal: AbortSignal.timeout(8000),
       },
     );
-    if (!response.ok) throw Error("Verification unavailable");
-    result = await response.json();
+   const raw = await response.text();
+
+if (!response.ok) {
+  console.error("Turnstile Siteverify HTTP error:", {
+    status: response.status,
+    statusText: response.statusText,
+    contentType: response.headers.get("content-type"),
+    body: raw.slice(0, 500),
+  });
+
+  throw new Error(`Verification unavailable (${response.status})`);
+}
+
+result = JSON.parse(raw);
   } catch (error) {
     console.error("Turnstile Siteverify error:", error);
 
