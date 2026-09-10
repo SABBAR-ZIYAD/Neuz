@@ -45,7 +45,9 @@ export async function verifyTurnstile(
     );
     if (!response.ok) throw Error("Verification unavailable");
     result = await response.json();
-  } catch {
+  } catch (error) {
+    console.error("Turnstile Siteverify error:", error);
+
     throw new CatalogError(
       "La vérification de sécurité est indisponible. Réessayez.",
       503,
