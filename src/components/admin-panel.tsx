@@ -59,7 +59,7 @@ export function AdminPanel({ initialData }: { initialData: State }) {
     const response = await fetch(url, { ...options, cache: "no-store" });
     const result = await response.json();
     if (response.status === 401) {
-      router.replace("/admin/login");
+      router.replace("/abdel/login");
       router.refresh();
       throw Error("Veuillez vous reconnecter.");
     }
@@ -259,7 +259,7 @@ export function AdminPanel({ initialData }: { initialData: State }) {
     setBusy(true);
     try {
       await request("/api/admin/logout", { method: "POST" });
-      router.replace("/admin/login");
+      router.replace("/abdel/login");
       router.refresh();
     } catch (e) {
       setError(e instanceof Error ? e.message : "Déconnexion impossible.");
@@ -299,7 +299,7 @@ export function AdminPanel({ initialData }: { initialData: State }) {
         <div className="admin-header-left">
           <Link
             className="admin-account-link"
-            href="/admin/account"
+            href="/abdel/account"
             aria-label="Mon compte"
             title="Mon compte"
           >
@@ -307,7 +307,7 @@ export function AdminPanel({ initialData }: { initialData: State }) {
           </Link>
           <Link
             className="admin-brand"
-            href="/admin"
+            href="/abdel"
             aria-label="NEUZ administration"
           >
             <img

@@ -13,5 +13,5 @@ export default function proxy(request: NextRequest) {
   return localize(request);
 }
 export const config = {
-  matcher: ["/((?!api|admin|media|_next|_vercel|.*\\..*).*)"],
+  matcher: ["/((?!api|admin|abdel|media|_next|_vercel|.*\\..*).*)"],
 };

@@ -69,8 +69,8 @@ try {
     ).status(),
     401,
   );
-  await page.goto(base + "/admin");
-  await expect(page).toHaveURL(/\/admin\/login$/);
+  await page.goto(base + "/abdel");
+  await expect(page).toHaveURL(/\/abdel\/login$/);
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
     "content",
     /noindex/,
@@ -285,7 +285,7 @@ try {
   await page
     .getByRole("button", { name: "Se d\u00E9connecter", exact: true })
     .click();
-  await expect(page).toHaveURL(/\/admin\/login$/);
+  await expect(page).toHaveURL(/\/abdel\/login$/);
   assert.equal(
     (await context.request.get(base + "/api/admin/catalog")).status(),
     401,

@@ -28,7 +28,7 @@ await writeFile(".env.local", result, { mode: 0o600 });
 await mkdir("tmp", { recursive: true });
 await writeFile(
   "tmp/admin-access.txt",
-  "NEUZ admin\nURL: http://127.0.0.1:3000/admin\nUtilisateur: admin\nMot de passe: " +
+  "NEUZ admin\nURL: http://127.0.0.1:3000/abdel\nUtilisateur: admin\nMot de passe: " +
     password +
     "\n\nIdentifiants locaux priv\u00E9s. Ne pas publier ce fichier.\n",
   { mode: 0o600 },

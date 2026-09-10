@@ -36,7 +36,7 @@ export function AdminAccountForm({ username }: { username: string }) {
   }
   return (
     <main className="admin-main admin-account">
-      <Link href="/admin">← Retour au catalogue</Link>
+      <Link href="/abdel">← Retour au catalogue</Link>
       <div className="admin-title">
         <div>
           <h1>Mon compte</h1>
@@ -49,7 +49,7 @@ export function AdminAccountForm({ username }: { username: string }) {
             Vos identifiants ont été modifiés. Toutes les sessions ont été
             fermées.
           </p>
-          <Link href="/admin/login">Se reconnecter</Link>
+          <Link href="/abdel/login">Se reconnecter</Link>
         </div>
       ) : (
         <form className="admin-editor" onSubmit={submit}>

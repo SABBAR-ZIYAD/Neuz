@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: isPublicSite ? "/" : undefined,
-      disallow: isPublicSite ? ["/api/", "/admin", "/admin/"] : "/",
+      disallow: isPublicSite ? ["/api/", "/abdel", "/abdel/"] : "/",
     },
     sitemap: `${siteUrl}/sitemap.xml`,
   };

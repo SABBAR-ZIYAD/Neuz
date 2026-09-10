@@ -27,7 +27,7 @@ export function AdminLogin({ configured }: { configured: boolean }) {
       });
       const data = await response.json();
       if (!response.ok) throw Error(data.error || "Connexion impossible.");
-      router.replace("/admin");
+      router.replace("/abdel");
       router.refresh();
     } catch (error) {
       setError(

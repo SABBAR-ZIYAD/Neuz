@@ -13,7 +13,7 @@ Both admin and quote limits use the existing `supabase/quote-limits.sql` RPC. Ap
 1. In Cloudflare, open **Turnstile**, add a **Managed** widget, and add `neuz.ma` as a hostname. Add only the actual additional hosts that need forms. Prefer a separate widget for development/previews; do not authorize every Vercel customer by allowing `vercel.app`.
 2. Save `NEXT_PUBLIC_TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY` in `.env.local` and the appropriate Vercel environment. The secret belongs only on the server. Never commit it or paste it into chat.
 3. Rebuild/redeploy: the public key is compiled into the browser bundle.
-4. Check `/admin/login` and the final quote-form step on the intended host. A full quote-delivery test sends a real email and consumes one allowance slot.
+4. Check `/abdel/login` and the final quote-form step on the intended host. A full quote-delivery test sends a real email and consumes one allowance slot.
 
 Hosted admin logins and quotes require both keys and a valid token. Missing/partial configuration or provider failure blocks the operation. Official dummy testing keys are rejected on hosted requests. Server verification checks the token's hostname against the trusted browser origin and its action against `admin_login` or `quote`. Invalid/expired tokens cannot spend the email budget. Browser failures clear the token, offer a retry control, and preserve quote content.
 

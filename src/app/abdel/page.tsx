@@ -7,7 +7,7 @@ import { storageMode } from "@/lib/catalog-storage";
 import { AdminPanel } from "@/components/admin-panel";
 export default async function AdminPage() {
   if (!(await sessionAccount((await cookies()).get(adminCookie)?.value)))
-    redirect("/admin/login");
+    redirect("/abdel/login");
   const snapshot = await new CatalogRepository().read();
   return (
     <AdminPanel

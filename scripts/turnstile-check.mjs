@@ -20,7 +20,7 @@ try {
     loginToken = route.request().postDataJSON().turnstile;
     await route.fulfill({ status: 401, json: { error: "Identifiants incorrects." } });
   });
-  await page.goto(base + "/admin/login");
+  await page.goto(base + "/abdel/login");
   await page.getByRole("button", { name: "Réessayer", exact: true }).click();
   await expect.poll(() => page.evaluate(() => window.__botOptions?.action)).toBe("admin_login");
   await page.getByLabel("Identifiant", { exact: true }).fill("test-admin");

@@ -7,6 +7,6 @@ export default async function AccountPage() {
   const account = await sessionAccount(
     (await cookies()).get(adminCookie)?.value,
   );
-  if (!account) redirect("/admin/login");
+  if (!account) redirect("/abdel/login");
   return <AdminAccountForm username={account.username} />;
 }

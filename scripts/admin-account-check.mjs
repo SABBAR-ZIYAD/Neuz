@@ -18,7 +18,7 @@ try {
   assert.equal((await login(username,password)).status(),200,"Initial login");
   const oldCookie = (await context.cookies()).find(c=>c.name==="neuz_admin").value;
   const page = await context.newPage();
-  await page.goto(base+"/admin");
+  await page.goto(base+"/abdel");
   await page.getByRole("link",{name:"Mon compte",exact:true}).click();
   await expect(page.getByRole("heading",{name:"Mon compte"})).toBeVisible();
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
@@ -49,7 +49,7 @@ try {
   assert.equal(JSON.stringify(catalog).includes("passwordHash"),false);
   const publicHtml=await context.request.get(base+"/fr").then(r=>r.text());
   assert.equal(publicHtml.includes("passwordHash"),false);
-  await page.goto(base+"/admin/account");
+  await page.goto(base+"/abdel/account");
   await expect(page.getByLabel("Identifiant",{exact:true})).toHaveValue("test-owner");
   console.log("Passed: account page, mobile accessibility, credential change, new login, old password/session rejection, no credential exposure.");
 } finally {

@@ -56,7 +56,7 @@ Do not add any private values to `netlify.toml` or the `env` section of `next.co
 
 **5. Redeploy and check the hosted preview.**
 
-Trigger a new deploy after setting the environment values. Confirm the build log installs with Bun and uses the Next.js adapter. Open `/fr`, `/en`, `/ar` and `/admin/login` on the Netlify URL. Complete a real Turnstile challenge and sign in with the current admin credentials. Check that products and their images load. Confirm the site remains noindex while `SITE_NOINDEX=true`.
+Trigger a new deploy after setting the environment values. Confirm the build log installs with Bun and uses the Next.js adapter. Open `/fr`, `/en`, `/ar` and `/abdel/login` on the Netlify URL. Complete a real Turnstile challenge and sign in with the current admin credentials. Check that products and their images load. Confirm the site remains noindex while `SITE_NOINDEX=true`.
 
 The quote form will show its unavailable state until `RESEND_FROM` is configured. Do not interpret mocked browser-test success as actual email delivery. The primary deployment URL is trusted automatically; other exact preview URLs can be added to `TRUSTED_PREVIEW_ORIGINS` if needed. Every hostname where Turnstile runs also needs approval in its widget settings.
 

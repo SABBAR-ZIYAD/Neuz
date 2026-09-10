@@ -89,4 +89,4 @@ Production builds are verified with Bun 1.4.2 (see packageManager). Bun 1.3.11 f
 
 ## Product and category administration
 
-Open /admin after running `bun run admin:setup` and restarting the development server. Private local login details are written to `tmp/admin-access.txt`. See [the admin guide](docs/admin.md) for CRUD, Supabase setup, migration and deployment.
+Open /abdel after running `bun run admin:setup` and restarting the development server. Private local login details are written to `tmp/admin-access.txt`. See [the admin guide](docs/admin.md) for CRUD, Supabase setup, migration and deployment.
