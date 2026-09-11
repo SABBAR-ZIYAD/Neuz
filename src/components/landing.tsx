@@ -499,16 +499,38 @@ export function Landing({ catalog }: { catalog: PublicCatalog }) {
             />
           </a>
           <p>{t("footer.tag")}</p>
-          <a
-            href={contact.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="instagram"
-          >
-            <Instagram size={18} strokeWidth={1.3} />
-            <span>@neuz.ma</span>
-            <Arrow />
-          </a>
+          <div className="footer-socials">
+            <a
+              href={contact.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              aria-label="Instagram @neuz.ma"
+            >
+              <Instagram size={18} strokeWidth={1.3} aria-hidden="true" />
+              <span>@neuz.ma</span>
+              <Arrow />
+            </a>
+            <a
+              href={contact.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              aria-label="TikTok @neuz.ma"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-2-2.75V9.4a6.33 6.33 0 1 0 5.45 6.27V8.68a8.16 8.16 0 0 0 4.77 1.52V6.77a4.85 4.85 0 0 1-1-.08Z" />
+              </svg>
+              <span>@neuz.ma</span>
+              <Arrow />
+            </a>
+          </div>
         </div>
         <div className="footer-bottom">
           <span>

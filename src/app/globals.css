@@ -212,8 +212,9 @@ section[id] {
   margin-bottom: 34px;
 }
 
-/* A fixed, genuinely transparent navigation, with a contrast-aware wordmark. */
+/* Frosted bronze glass, with a cream tint over light sections. */
 .header {
+  --header-glass: rgb(48 33 22 / 40%);
   position: fixed;
   top: 0;
   left: 0;
@@ -223,24 +224,51 @@ section[id] {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  padding: 22px var(--gutter);
-  height: 104px;
+  padding: calc(12px + env(safe-area-inset-top))
+    max(var(--gutter), env(safe-area-inset-right)) 12px
+    max(var(--gutter), env(safe-area-inset-left));
+  height: calc(72px + env(safe-area-inset-top));
   color: var(--cream);
-  transition: color 0.25s;
-  background: transparent;
+  background: var(--ink);
+  border-bottom: 1px solid rgb(243 236 226 / 18%);
+  box-shadow:
+    inset 0 1px 0 rgb(243 236 226 / 8%),
+    0 8px 32px rgb(24 16 11 / 12%);
   isolation: isolate;
 }
 .header[data-surface="light"] {
+  --header-glass: rgb(243 236 226 / 78%);
   color: var(--brown);
+  background: var(--cream);
+  border-bottom-color: rgb(74 43 24 / 14%);
+  box-shadow:
+    inset 0 1px 0 rgb(249 245 238 / 55%),
+    0 8px 32px rgb(48 33 22 / 6%);
+}
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .header,
+  .header[data-surface="light"] {
+    background: var(--header-glass);
+    -webkit-backdrop-filter: blur(14px) saturate(125%);
+    backdrop-filter: blur(14px) saturate(125%);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .header {
+    --header-glass: var(--ink);
+  }
+  .header[data-surface="light"] {
+    --header-glass: var(--cream);
+  }
 }
 .logo-link {
   display: flex;
   align-items: center;
-  min-width: 116px;
+  min-width: 104px;
   min-height: 44px;
 }
 .brand-logo {
-  width: 116px;
+  width: 104px;
   height: auto;
   filter: brightness(0) invert(95%) sepia(14%) saturate(307%) hue-rotate(343deg)
     brightness(98%);
@@ -899,12 +927,19 @@ details[open] > summary > .minus {
   text-transform: uppercase;
   max-width: 180px;
 }
-.instagram {
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  margin-inline-start: auto;
+}
+.footer-social-link {
   display: flex;
   align-items: center;
   gap: 13px;
   font-size: 11px;
-  margin-inline-start: auto;
+  white-space: nowrap;
   min-height: 44px;
 }
 .footer-bottom {
@@ -1745,8 +1780,8 @@ html[lang="ar"] .process-steps summary h3 {
     --gutter: 25px;
   }
   .header {
-    height: 85px;
-    padding-block: 18px;
+    height: calc(64px + env(safe-area-inset-top));
+    padding-block: calc(9px + env(safe-area-inset-top)) 9px;
     gap: 15px;
   }
   .brand-logo {
@@ -2024,9 +2059,11 @@ html[lang="ar"] .process-steps summary h3 {
     max-width: 160px;
     margin-inline-start: auto;
   }
-  .instagram {
+  .footer-socials {
     margin: 10px 0 0;
     width: 100%;
+  }
+  .footer-social-link {
     font-size: 10px;
   }
   .footer-bottom {

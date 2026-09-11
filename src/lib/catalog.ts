@@ -22,4 +22,5 @@ export const contact = {
   phone: "+212700388324",
   whatsapp: "https://wa.me/212700388324",
   instagram: "https://www.instagram.com/neuz.ma/",
+  tiktok: "https://www.tiktok.com/@neuz.ma",
 };
